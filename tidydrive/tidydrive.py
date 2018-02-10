@@ -1,7 +1,7 @@
 import logging
 import os
-from tidydrive.core.file import path_parts
-import tidydrive.core.api
+from core.file import path_parts
+import core.api
 
 from functools import wraps
 
