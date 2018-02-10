@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: tidydrive
+Version: 0.1
+Summary: hi level functions to browse and download/upload drives from google drive
+Home-page: http://github.com/zekearneodo/tidydrive
+Author: Zeke Arneodo
+Author-email: earneodo@ucsd.edu
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: os
+Requires: apiclient.http
+Requires: googleapiclient
+Requires: hashlib
+Requires: tqdm

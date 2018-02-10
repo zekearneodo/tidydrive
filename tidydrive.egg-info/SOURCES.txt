@@ -1,0 +1,7 @@
+tidydrive/__init__.py
+tidydrive/tidydrive.py
+tidydrive.egg-info/PKG-INFO
+tidydrive.egg-info/SOURCES.txt
+tidydrive.egg-info/dependency_links.txt
+tidydrive.egg-info/not-zip-safe
+tidydrive.egg-info/top_level.txt
