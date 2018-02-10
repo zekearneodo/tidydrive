@@ -1,11 +1,7 @@
-import io
-import sys
 import logging
 import os
-from apiclient.http import MediaIoBaseDownload, MediaFileUpload
-from googleapiclient import errors
 from tidydrive.core.file import path_parts
-from tidydrive.core import api
+import tidydrive.core.api
 
 from functools import wraps
 
