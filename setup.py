@@ -8,6 +8,6 @@ setup(name='tidydrive',
       author_email='earneodo@ucsd.edu',
       license='MIT',
       packages=['tidydrive'],
-      requires=['os', 'apiclient.http', 'googleapiclient', 'hashlib', 'tqdm'],
+      install_requires=['os', 'apiclient.http', 'googleapiclient', 'hashlib', 'tqdm'],
       dependency_links=['tqdm'],
       zip_safe=False)
