@@ -31,7 +31,7 @@ def path_wrapper(method):
             if args[0] in ['content', '/', '']:
                 file_obj = obj.root
             else:
-                file_obj = obj.get_by_path(args[0]
+                file_obj = obj.get_by_path(args[0])
             # print('got file_obj {}'.format(file_obj))
         else:
             file_obj = args[0]
