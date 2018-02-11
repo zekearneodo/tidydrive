@@ -1,7 +1,7 @@
 import logging
 import os
-from core.file import path_parts
-import core.api
+from .core.file import path_parts
+import .core.api
 
 from functools import wraps
 

@@ -9,5 +9,5 @@ setup(name='tidydrive',
       license='MIT',
       packages=['tidydrive'],
       install_requires=['os', 'apiclient.http', 'googleapiclient', 'hashlib', 'tqdm'],
-      dependency_links=['tqdm'],
+      setup_requires=['os', 'apiclient.http', 'googleapiclient', 'hashlib', 'tqdm'],
       zip_safe=False)
