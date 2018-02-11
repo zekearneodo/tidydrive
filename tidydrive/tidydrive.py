@@ -2,7 +2,7 @@ from __future__ import absolute_import
 import logging
 import os
 
-#from .core.file import path_parts
+from .core.file import path_parts
 from .core import api
 
 from functools import wraps
