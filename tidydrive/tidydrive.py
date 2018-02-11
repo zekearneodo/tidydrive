@@ -28,7 +28,10 @@ def path_wrapper(method):
     def right_input_fun(obj, *args, **kwargs):
         if isinstance(args[0], str):
             # print('Entered string')
-            file_obj = obj.get_by_path(args[0])
+            if args[0] in ['content', '/', '']:
+                file_obj = obj.root
+            else:
+                file_obj = obj.get_by_path(args[0]
             # print('got file_obj {}'.format(file_obj))
         else:
             file_obj = args[0]
@@ -58,8 +61,10 @@ def name_from_path(method):
 
 
 class TidyDrive:
-    def __init__(self, service):
+    def __init__(self, service, root_id=None):
         self.service = service
+        self.root_id = root_id
+        self.root = None
         self.query_fields = "files(id, name, mimeType, parents, size)"
         self.default_query_par = {'parents': None,
                                   'trashed': 'false',
@@ -68,7 +73,13 @@ class TidyDrive:
                                   'pattern': None,
                                   'id': None
                                   }
+        self._get_root()
 
+    def _get_root(self):
+        if self.root_id is None:
+            self.root_id='root'
+        self.root=self.service.files().get(fileId=self.root_id).execute()
+                                           
     def get_single_child(self, name, parent_id='root'):
         query = "parents='{0}' and trashed=false and name='{1}'".format(parent_id, name)
         results = self.service.files().list(q=query,
