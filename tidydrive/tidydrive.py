@@ -3,7 +3,7 @@ import logging
 import os
 
 from ._util import path_parts
-import _api
+from ._api import download_file, upload_file
 
 from functools import wraps
 
@@ -115,7 +115,7 @@ class TidyDrive:
 
     @path_wrapper
     def download_file(self, file_obj, dest_path):
-        return api.download_file(self.service, file_obj['id'], dest_path, retries=5)
+        return download_file(self.service, file_obj['id'], dest_path, retries=5)
 
     @name_from_path
     @path_wrapper
@@ -124,7 +124,7 @@ class TidyDrive:
         logger.debug('Upload file entered p_obj {} name {} local_path {}'.format(parent_obj,
                                                                                  name,
                                                                                  local_file_path))
-        return api.upload_file(self.service, parent_obj, os.path.join(local_file_path, name))
+        return upload_file(self.service, parent_obj, os.path.join(local_file_path, name))
 
     @path_wrapper
     @unique_wrapper
