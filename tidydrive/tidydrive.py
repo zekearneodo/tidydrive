@@ -3,7 +3,7 @@ import logging
 import os
 
 from ._util import path_parts
-import ._api
+import _api
 
 from functools import wraps
 
