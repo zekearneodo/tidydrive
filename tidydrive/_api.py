@@ -9,7 +9,7 @@ import tqdm
 from apiclient.http import MediaIoBaseDownload, MediaFileUpload
 from googleapiclient import errors
 
-logger = logging.getLogger('tidydrive.core.api')
+logger = logging.getLogger('tidydrive.api')
 
 
 def get_file_item(service, file_id, retries=5):

@@ -2,8 +2,8 @@ from __future__ import absolute_import
 import logging
 import os
 
-from core.util import path_parts
-from core import api
+from ._util import path_parts
+import ._api as api
 
 from functools import wraps
 
