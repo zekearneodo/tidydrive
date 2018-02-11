@@ -78,7 +78,7 @@ def upload_file(service, parent_obj, file_path, retries=5, chunk_size=1048576):
                      'content-length': chunk_size,
                      'content-range': '*/{}'.format(file_size)}
 
-    media = MediaFileUpload(local_file,
+    media = MediaFileUpload(file_path,
                             resumable=True,
                             chunksize=chunk_size)
 
