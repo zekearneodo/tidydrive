@@ -84,9 +84,9 @@ class TidyDrive:
         query = "parents='{0}' and trashed=false and name='{1}'".format(parent_id, name)
         results = self.service.files().list(q=query,
                                             fields=self.query_fields).execute()
-        list_found = items = results.get('files', [])
+        list_found = results.get('files', [])
         if len(list_found) > 1:
-            raise RuntimeError('Found more than 1 file with the name')
+            raise RuntimeError('Found more than 1 file with the name {}'.format(name))
         return list_found
 
     def get_by_path(self, path, parent_id='root'):
@@ -120,7 +120,7 @@ class TidyDrive:
         query = "parents='{0}' and trashed=false".format(file_obj['id'])
         results = self.service.files().list(q=query,
                                             fields=self.query_fields).execute()
-        list_found = items = results.get('files', [])
+        list_found = results.get('files', [])
         # return list_found
         return list(map(lambda x: x['name'], list_found))
 
